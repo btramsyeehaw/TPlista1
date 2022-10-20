@@ -31,7 +31,6 @@ public class App
             System.out.println("Enter the amount of innings played by "+playerName);
             int innings = personalData.nextInt();
             Batter batter = new Batter(playerName, playerClub, runsScored, ballsFaced, innings);
-            System.out.println(batter.getBattingAverage());
             batter.printTeam();
             batter.printStats();
         }

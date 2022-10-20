@@ -1,5 +1,5 @@
 package lista1.laboratoriumtp;
-
+import java.text.DecimalFormat;
 public class Bowler implements Player{
 
     String name;
@@ -7,6 +7,7 @@ public class Bowler implements Player{
     int runsAllowed;
     int ballsBowled;
     int wickets;
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public Bowler(String name,String team, int runsAllowed, int ballsBowled, int wickets) {
         this.name = name;
@@ -21,13 +22,13 @@ public class Bowler implements Player{
     }
     
     public void printStats() {
-        System.out.println(this.name+" bowls for a "+Double.toString(this.getBowlingAverage())+" average, while going at "+Double.toString(this.getEconomyRate())+" runs an over");
+        System.out.println(this.name+" bowls for a "+df.format(this.getBowlingAverage())+" average, while going at "+df.format(this.getEconomyRate())+" runs an over");
     }
     public double getBowlingAverage() {
-        return runsAllowed/wickets;
+        return 1.0*runsAllowed/wickets;
     }
     public double getEconomyRate() {
-        return 6*runsAllowed/ballsBowled;
+        return 6.0*runsAllowed/ballsBowled;
     }
 
 }
