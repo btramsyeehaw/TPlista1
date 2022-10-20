@@ -25,10 +25,20 @@ public class Bowler implements Player{
         System.out.println(this.name+" bowls for a "+df.format(this.getBowlingAverage())+" average, while going at "+df.format(this.getEconomyRate())+" runs an over");
     }
     public double getBowlingAverage() {
-        return 1.0*runsAllowed/wickets;
+        if (wickets>0) {
+            return 1.0*runsAllowed/wickets;
+        }
+        else {
+            return 123456789.0;
+        }
     }
     public double getEconomyRate() {
-        return 6.0*runsAllowed/ballsBowled;
+        if (ballsBowled>0){
+            return 6.0*runsAllowed/ballsBowled;
+        }
+        else {
+            return 123456789.0;
+        }
     }
 
 }
